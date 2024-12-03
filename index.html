@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mowquery - Academic Knowledge Platform</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -15,37 +16,63 @@
                             DEFAULT: '#5ecfff',
                             dark: '#2eb5ff'
                         }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui']
                     }
                 }
             }
         }
     </script>
+    <style>
+        body {
+            @apply antialiased;
+        }
+        /* Responsive Typography */
+        html {
+            font-size: 16px;
+        }
+        @media (max-width: 768px) {
+            html {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            html {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3">
-            <div class="flex justify-between items-center">
-                <div class="text-2xl font-bold text-primary-dark">Mowquery</div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#" class="text-gray-600 hover:text-primary-dark">Home</a>
-                    <a href="#" class="text-gray-600 hover:text-primary-dark">Features</a>
-                    <a href="#" class="text-gray-600 hover:text-primary-dark">About</a>
-                </div>
-                <div>
-                    <button class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full">Sign Up</button>
-                </div>
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-primary-dark tracking-tight">Mowquery</div>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#" class="text-gray-600 hover:text-primary-dark transition-colors duration-300">Home</a>
+                <a href="#" class="text-gray-600 hover:text-primary-dark transition-colors duration-300">Features</a>
+                <a href="#" class="text-gray-600 hover:text-primary-dark transition-colors duration-300">About</a>
+            </div>
+            <div class="flex items-center">
+                <button class="bg-primary hover:bg-primary-dark text-white px-6 py-2 rounded-full transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg">
+                    Sign Up
+                </button>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="bg-gradient-to-r from-primary-light to-primary">
-        <div class="container mx-auto px-4 py-16">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Syncing All students on one platform</h1>
-                <p class="text-xl mb-8">Where students can learn together, collaborate and access opportunities.  </p>
-                <button class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-semibold">
+    <div class="bg-gradient-to-r from-primary-light to-primary relative overflow-hidden">
+        <div class="container mx-auto px-4 py-16 text-center relative z-10">
+            <div class="text-white max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                    Syncing All Students on One Platform
+                </h1>
+                <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                    Where students can learn together, collaborate, and access opportunities.
+                </p>
+                <button class="bg-white text-primary hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 ease-in-out transform hover:scale-105 shadow-md hover:shadow-lg">
                     Get Started
                 </button>
             </div>
@@ -53,125 +80,62 @@
     </div>
 
     <!-- Features Sections -->
-    <div class="container mx-auto px-4 py-16">
-        <!-- Q&A Platform Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Academic Q&A Platform</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-4 text-lg">Our Stack Overflow-inspired Q&A platform is the heart of Mowquery, designed specifically for academic collaboration and knowledge sharing. Here's what makes it special:</p>
+    <div class="container mx-auto px-4 py-16 space-y-12">
+        <!-- Sections Repeated with Improved Design -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Academic Q&A Platform</h2>
+            <div class="bg-white rounded-xl p-8 shadow-lg transition-all duration-300 hover:shadow-xl">
+                <div class="prose max-w-none text-gray-700 space-y-6">
+                    <p class="text-lg text-center mb-6">Our Stack Overflow-inspired Q&A platform is the heart of Mowquery, designed specifically for academic collaboration and knowledge sharing.</p>
                     
-                    <div class="space-y-6">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Question Posting & Management</h3>
-                            <p>Students can post detailed academic questions with rich text formatting, code snippets, and mathematical equations. Questions can be tagged with relevant subjects, topics, and courses for easy discovery. The platform supports multiple file attachments, including images and PDFs, to provide context and clarity.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+                            <h3 class="text-xl font-semibold mb-4 text-primary-dark">Question Posting & Management</h3>
+                            <p>Students can post detailed academic questions with rich text formatting, code snippets, and mathematical equations.</p>
                         </div>
-
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Answer System</h3>
-                            <p>Answers can be upvoted by the community, with the best solutions rising to the top. Students can mark answers as "accepted" when they solve their problem. All answers support rich formatting, including LaTeX for mathematical notation, code highlighting, and image embedding.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Tagging & Search</h3>
-                            <p>A comprehensive tagging system allows questions to be categorized by subject, topic, difficulty level, and institution. Advanced search functionality enables students to filter by these tags, search within specific time periods, and sort by various metrics including vote count and answer count.</p>
-                        </div>
-
-                        <div>
-                            <h3 class="text-xl font-semibold mb-3 text-gray-800">Reputation & Rewards</h3>
-                            <p>Contributors earn reputation points for quality answers, helpful edits, and insightful questions. Higher reputation unlocks additional platform privileges, such as moderation tools and the ability to create new tags.</p>
+                        <div class="bg-gray-50 p-6 rounded-lg hover:bg-gray-100 transition-colors">
+                            <h3 class="text-xl font-semibold mb-4 text-primary-dark">Answer System</h3>
+                            <p>Answers can be upvoted by the community, with the best solutions rising to the top. Support for LaTeX and code highlighting.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Exam Prep Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Examination Self-Preparation</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-6 text-lg">A comprehensive suite of tools designed to help students prepare for examinations effectively and track their progress:</p>
-                    
-                    <ul class="space-y-4">
-                        <li>Do a self examination before exams </li>
-                        <li>Prepare well with AI tools</li>
-                    
-                    </ul>
+        <!-- Other Sections Simplified and Modernized -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Examination Self-Preparation</h2>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <p class="text-lg text-center mb-6">A comprehensive suite of tools designed to help students prepare for examinations effectively.</p>
+                <div class="grid md:grid-cols-2 gap-4 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg">Do a self examination before exams</div>
+                    <div class="bg-gray-50 p-6 rounded-lg">Prepare well with AI tools</div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Hub Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Projects Hub</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-6 text-lg">A collaborative space where students can work together on academic and research projects:</p>
-                    
-                    <div class="space-y-4">
-                        <p>Find project partners based on skills, interests, and academic background. Create project proposals and invite collaborators.</p>
-                        <p>Share project resources, including documents, code repositories, and research materials. Get feedback from peers and mentors through structured review processes.</p>
-                    </div>
+        <!-- Simplified other sections with similar modern styling -->
+        <section>
+            <h2 class="text-3xl font-bold mb-8 text-gray-800 text-center">Projects Hub</h2>
+            <div class="bg-white rounded-xl p-8 shadow-lg">
+                <p class="text-lg text-center mb-6">A collaborative space for academic and research projects.</p>
+                <div class="text-center space-y-4">
+                    <p>Find project partners and create collaborative proposals</p>
+                    <p>Share resources and get peer feedback</p>
                 </div>
             </div>
         </section>
 
-        <!-- Internships Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Internship Opportunities</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-6 text-lg">Connect with internship opportunities and manage your applications:</p>
-                    
-                    <div class="space-y-4">
-                        <p>Browse internship postings from verified companies and organizations. Filter opportunities by field of study, location, duration, and compensation. Students can post internship opportunities they discover, helping peers find valuable experiences.</p>
-                        <p>Track application statuses and deadlines.</p>
-                    </div>
+        <!-- Call to Action -->
+        <div class="bg-primary-dark rounded-xl">
+            <div class="container mx-auto px-4 py-16 text-center">
+                <div class="text-white max-w-2xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Join Our Academic Community Today</h2>
+                    <p class="text-lg md:text-xl mb-8">Practice with peers, access opportunities, and enhance your academic journey</p>
+                    <button class="bg-white text-primary-dark hover:bg-gray-100 px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-md">
+                        Sign Up Now
+                    </button>
                 </div>
-            </div>
-        </section>
-
-        <!-- Scholarships Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Scholarship Access</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-6 text-lg">Find and apply for scholarships that match your academic profile:</p>
-                    
-                    <div class="space-y-4">
-                       
-                        <p>Share scholarship opportunities with the community. Track application deadlines and requirements. .</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Surveys Section -->
-        <section class="mb-20">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800">Research Surveys</h2>
-            <div class="bg-white rounded-lg p-8 shadow-sm">
-                <div class="prose max-w-none text-gray-700">
-                    <p class="mb-6 text-lg">Participate in and create academic research surveys:</p>
-                    
-                    <div class="space-y-4">
-                        <p>Create surveys using integrated Google Forms functionality. Share surveys with specific academic groups or the broader community. Track response rates and gather insights through automated analytics.</p>
-                        <p>Find relevant surveys to participate in, contributing to academic research. Access survey results and findings when available.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Call to Action -->
-    <div class="bg-primary-dark">
-        <div class="container mx-auto px-4 py-12">
-            <div class="text-center text-white">
-                <h2 class="text-3xl font-bold mb-4">Join Our Academic Community Today</h2>
-                <p class="text-xl mb-8">Practice with peers, access opportunities, and enhance your academic journey</p>
-                <button class="bg-white text-primary-dark hover:bg-gray-100 px-8 py-3 rounded-full font-semibold">
-                    Sign Up Now
-                </button>
             </div>
         </div>
     </div>
